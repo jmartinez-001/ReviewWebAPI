@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201905141652570_Initial.Designer.cs">
       <DependentUpon>201905141652570_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905142133562_seeding initial reviews.cs" />
+    <Compile Include="Migrations\201905142133562_seeding initial reviews.Designer.cs">
+      <DependentUpon>201905142133562_seeding initial reviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Author.cs" />
@@ -265,6 +269,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905141652570_Initial.resx">
       <DependentUpon>201905141652570_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905142133562_seeding initial reviews.resx">
+      <DependentUpon>201905142133562_seeding initial reviews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
