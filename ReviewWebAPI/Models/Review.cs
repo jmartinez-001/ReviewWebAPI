@@ -46,6 +46,5 @@ namespace ReviewWebAPI.Models
 
         public List<Comment> Comments { get; set; }
 
-
     }
 }

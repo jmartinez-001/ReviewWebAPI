@@ -181,6 +181,8 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\ReviewDetailDTO.cs" />
+    <Compile Include="Models\ReviewDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,16 +18,39 @@ namespace ReviewWebAPI.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Reviews
-        public IQueryable<Review> GetReviews()
+        public IQueryable<ReviewDTO> GetReviews()
         {
-            return db.Reviews;
+            var reviews = from r in db.Reviews
+                          select new ReviewDTO()
+                          {
+                              Id = r.Id,
+                              Title = r.Title,
+                              AuthorName = r.Author.FirstName + " " + r.Author.LastName
+                          };
+            return reviews;
         }
 
         // GET: api/Reviews/5
-        [ResponseType(typeof(Review))]
+        [ResponseType(typeof(ReviewDTO))]
         public async Task<IHttpActionResult> GetReview(int id)
         {
-            Review review = await db.Reviews.FindAsync(id);
+            var review = await db.Reviews.Include(r => r.Author).Select(r => 
+            new ReviewDetailDTO()
+            {
+                Id = r.Id,
+                Title = r.Title,
+                AuthorName = r.Author.FirstName + " " +r.Author.LastName,
+                ContractorId = r.ContractorId,
+                ClientId = r.ClientId,
+                JobType = r.JobType,
+                Content = r.Content,
+                Date = r.Date,
+                Rating = r.Rating,
+                Budget = r.Budget,
+                Helpful = r.Helpful,
+                Comments = r.Comments,
+                
+            }).SingleOrDefaultAsync(r => r.Id == id);
             if (review == null)
             {
                 return NotFound();
@@ -72,7 +95,7 @@ namespace ReviewWebAPI.Controllers
         }
 
         // POST: api/Reviews
-        [ResponseType(typeof(Review))]
+        [ResponseType(typeof(ReviewDTO))]
         public async Task<IHttpActionResult> PostReview(Review review)
         {
             if (!ModelState.IsValid)
@@ -83,7 +106,16 @@ namespace ReviewWebAPI.Controllers
             db.Reviews.Add(review);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = review.Id }, review);
+            db.Entry(review).Reference(x => x.Author).Load();
+
+            var dto = new ReviewDTO()
+            {
+                Id = review.Id,
+                Title = review.Title,
+                AuthorName = review.Author.FirstName + " " + review.Author.LastName
+            };
+
+            return CreatedAtRoute("DefaultApi", new { id = review.Id }, dto);
         }
 
         // DELETE: api/Reviews/5
