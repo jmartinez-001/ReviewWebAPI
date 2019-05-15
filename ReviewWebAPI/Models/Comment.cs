@@ -12,8 +12,6 @@ namespace ReviewWebAPI.Models
         [Key]
         public int Id { get; set; }
 
-        public int SubjectId { get; set; }
-
         [ForeignKey("Author")]
         [Display(Name = "Author")]
         public int AuthorId { get; set; }

@@ -188,6 +188,10 @@
     <Compile Include="Migrations\201905151524101_updated List of comments to ICollection of comments.Designer.cs">
       <DependentUpon>201905151524101_updated List of comments to ICollection of comments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905152251588_deleted subject prop.cs" />
+    <Compile Include="Migrations\201905152251588_deleted subject prop.Designer.cs">
+      <DependentUpon>201905152251588_deleted subject prop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Author.cs" />
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905151524101_updated List of comments to ICollection of comments.resx">
       <DependentUpon>201905151524101_updated List of comments to ICollection of comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905152251588_deleted subject prop.resx">
+      <DependentUpon>201905152251588_deleted subject prop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
