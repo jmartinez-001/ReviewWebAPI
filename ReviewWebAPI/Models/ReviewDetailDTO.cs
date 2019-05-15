@@ -9,9 +9,9 @@ namespace ReviewWebAPI.Models
     {
         public int Id { get; set; }
 
-        public int ContractorId { get; set; }
+        public string AuthorUserId { get; set; }
 
-        public int ClientId { get; set; }
+        public string SubjectUserId { get; set; }
 
         public string AuthorName { get; set; }
 
@@ -29,7 +29,7 @@ namespace ReviewWebAPI.Models
 
         public int Helpful { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

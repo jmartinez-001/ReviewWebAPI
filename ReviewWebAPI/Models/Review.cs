@@ -18,9 +18,9 @@ namespace ReviewWebAPI.Models
         
         public Author Author { get; set; }
 
-        public int ContractorId { get; set; }
+        public string AuthorUserId { get; set; }
 
-        public int ClientId { get; set; }
+        public string SubjectUserId { get; set; }
 
         [Display(Name = "Job Type")]
         public string JobType { get; set; }
@@ -44,7 +44,7 @@ namespace ReviewWebAPI.Models
         [Display(Name = "Helpful")]
         public int Helpful { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

@@ -176,6 +176,18 @@
     <Compile Include="Migrations\201905142133562_seeding initial reviews.Designer.cs">
       <DependentUpon>201905142133562_seeding initial reviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905151348497_changed to storing authoruserid and subjectuserid.cs" />
+    <Compile Include="Migrations\201905151348497_changed to storing authoruserid and subjectuserid.Designer.cs">
+      <DependentUpon>201905151348497_changed to storing authoruserid and subjectuserid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151442254_changed to storing authoruserid and subjectuserid as strings.cs" />
+    <Compile Include="Migrations\201905151442254_changed to storing authoruserid and subjectuserid as strings.Designer.cs">
+      <DependentUpon>201905151442254_changed to storing authoruserid and subjectuserid as strings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151524101_updated List of comments to ICollection of comments.cs" />
+    <Compile Include="Migrations\201905151524101_updated List of comments to ICollection of comments.Designer.cs">
+      <DependentUpon>201905151524101_updated List of comments to ICollection of comments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Author.cs" />
@@ -274,6 +286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905142133562_seeding initial reviews.resx">
       <DependentUpon>201905142133562_seeding initial reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151348497_changed to storing authoruserid and subjectuserid.resx">
+      <DependentUpon>201905151348497_changed to storing authoruserid and subjectuserid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151442254_changed to storing authoruserid and subjectuserid as strings.resx">
+      <DependentUpon>201905151442254_changed to storing authoruserid and subjectuserid as strings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151524101_updated List of comments to ICollection of comments.resx">
+      <DependentUpon>201905151524101_updated List of comments to ICollection of comments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

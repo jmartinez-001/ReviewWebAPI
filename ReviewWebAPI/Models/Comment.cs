@@ -12,6 +12,8 @@ namespace ReviewWebAPI.Models
         [Key]
         public int Id { get; set; }
 
+        public int SubjectId { get; set; }
+
         [ForeignKey("Author")]
         [Display(Name = "Author")]
         public int AuthorId { get; set; }
@@ -25,6 +27,6 @@ namespace ReviewWebAPI.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime Date { get; set; }
 
-        public List<Comment> Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }
