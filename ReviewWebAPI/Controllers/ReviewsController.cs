@@ -18,6 +18,7 @@ namespace ReviewWebAPI.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Reviews
+        [HttpGet()]
         public IQueryable<ReviewDTO> GetReviews()
         {
             var reviews = from r in db.Reviews
@@ -31,9 +32,11 @@ namespace ReviewWebAPI.Controllers
         }
 
         // GET: api/Reviews/5
+        [HttpGet()]
         [ResponseType(typeof(ReviewDTO))]
         public async Task<IHttpActionResult> GetReview(int id)
         {
+            //var commentsList = await db.Comments.Include(c => c.SubjectId == id).ToListAsync();
             var review = await db.Reviews.Include(r => r.Author).Select(r => 
             new ReviewDetailDTO()
             {
@@ -60,6 +63,7 @@ namespace ReviewWebAPI.Controllers
         }
 
         // PUT: api/Reviews/5
+        [HttpPut()]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutReview(int id, Review review)
         {
@@ -95,6 +99,7 @@ namespace ReviewWebAPI.Controllers
         }
 
         // POST: api/Reviews
+        [HttpPut()]
         [ResponseType(typeof(ReviewDTO))]
         public async Task<IHttpActionResult> PostReview(Review review)
         {
@@ -119,6 +124,7 @@ namespace ReviewWebAPI.Controllers
         }
 
         // DELETE: api/Reviews/5
+        [HttpDelete()]
         [ResponseType(typeof(Review))]
         public async Task<IHttpActionResult> DeleteReview(int id)
         {
